@@ -17,6 +17,8 @@ Hydrogen is Shopify’s stack for headless commerce. Hydrogen is designed to dov
 - TypeScript and JavaScript flavors
 - Minimal setup of components and routes
 
+🗒️ the /account section of the app will not work with mock.shop. To use locally, follow instructions in [customer-api example](https://github.com/Shopify/hydrogen/blob/main/examples/customer-api/README.md) to setup public domain and link an existing shop.
+
 ## Getting started
 
 **Requirements:**
