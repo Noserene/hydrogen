@@ -1,5 +1,28 @@
 # @shopify/create-hydrogen
 
+## 4.3.5
+
+### Patch Changes
+
+- 👩‍💻 improved HydrogenSession typing. ([#1590](https://github.com/Shopify/hydrogen/pull/1590)) by [@michenly](https://github.com/michenly)
+
+  In order to ensure utilies from @shopify/hydrogen will work properly using user implemented HydrogenSession class. We encourage the use of `HydrogenSession` type to ensure all the interface needed had been implemented.
+
+  Update implementation of HydrogenSession using type
+
+  ```diff
+  import {
+  + type HydrogenSession,
+  } from '@shopify/hydrogen';
+  - class HydrogenSession {
+  + class AppSession implements HydrogenSession {
+      ...
+  }
+  ```
+
+- Updated dependencies [[`8c477cb5`](https://github.com/Shopify/hydrogen/commit/8c477cb565c3e018bf4e13bad01804c21611fb8a), [`cce65795`](https://github.com/Shopify/hydrogen/commit/cce6579580f849bec9a28cf575f7130ba3627f6b), [`b1a1d7cb`](https://github.com/Shopify/hydrogen/commit/b1a1d7cba9f6eac50cbf459965e92814e4de1be9), [`b0d727d1`](https://github.com/Shopify/hydrogen/commit/b0d727d1f2bb643827e2fda438cfc447de7ee2e7), [`306d302a`](https://github.com/Shopify/hydrogen/commit/306d302ab401f22e5317fd84587c6a37cf931912)]:
+  - @shopify/cli-hydrogen@6.2.0
+
 ## 4.3.4
 
 ### Patch Changes

@@ -1,5 +1,46 @@
 # @shopify/hydrogen
 
+## 2023.11.0
+
+### Minor Changes
+
+- 💥 Change the behaviour of `createContentSecurityPolicy` where the custom rules passed in will extends the default Shopify and development domains instead of overriding them. ([#1593](https://github.com/Shopify/hydrogen/pull/1593)) by [@michenly](https://github.com/michenly)
+
+### Patch Changes
+
+- Fix type when passing custom methods to `createCartHandler`. ([#1588](https://github.com/Shopify/hydrogen/pull/1588)) by [@frandiox](https://github.com/frandiox)
+
+- ♻️ renamed all customer reference to the API to customer-account by [@michenly](https://github.com/michenly)
+
+- The `customerAccount` client now supports codegen types similar to the `storefront` client. ([#1587](https://github.com/Shopify/hydrogen/pull/1587)) by [@frandiox](https://github.com/frandiox)
+
+- ✨ add schema generation for customer account api in hydrogen-react and export these types in both hydrogen-react & hydrogen. Note the current CA API version is `2024-01` which is a release candidate and subject to change. ([#1572](https://github.com/Shopify/hydrogen/pull/1572)) by [@michenly](https://github.com/michenly)
+
+- 🐛 fix content security policy for local enviorment for not recognizing localhost asset server as a valid policy ([#1591](https://github.com/Shopify/hydrogen/pull/1591)) by [@michenly](https://github.com/michenly)
+
+- ✨ Make customer client utility official. ([#1606](https://github.com/Shopify/hydrogen/pull/1606)) by [@michenly](https://github.com/michenly)
+
+- 👩‍💻 improved HydrogenSession typing. ([#1590](https://github.com/Shopify/hydrogen/pull/1590)) by [@michenly](https://github.com/michenly)
+
+  In order to ensure utilies from @shopify/hydrogen will work properly using user implemented HydrogenSession class. We encourage the use of `HydrogenSession` type to ensure all the interface needed had been implemented.
+
+  Update implementation of HydrogenSession using type
+
+  ```diff
+  import {
+  + type HydrogenSession,
+  } from '@shopify/hydrogen';
+  - class HydrogenSession {
+  + class AppSession implements HydrogenSession {
+      ...
+  }
+  ```
+
+- ✨ add a utility `getAccessToken` to customerClient ([#1607](https://github.com/Shopify/hydrogen/pull/1607)) by [@michenly](https://github.com/michenly)
+
+- Updated dependencies [[`07d1b0b5`](https://github.com/Shopify/hydrogen/commit/07d1b0b5e62ff2d149deac80ce6fbe95d2b0f8ce), [`d6d01322`](https://github.com/Shopify/hydrogen/commit/d6d01322b430761c6ac3be71aa8fee798c85de37)]:
+  - @shopify/hydrogen-react@2023.10.2
+
 ## 2023.10.3
 
 ### Patch Changes
