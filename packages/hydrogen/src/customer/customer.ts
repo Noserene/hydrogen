@@ -137,6 +137,12 @@ export function createCustomerClient({
     );
   }
 
+  if (!customerAccountId || !customerAccountUrl) {
+    console.log(
+      `[h2:warn:createCustomerClient] customerAccountId and customerAccountUrl need to be provided to use Customer Account API correctly. (mock.shop does not contain these information)`,
+    );
+  }
+
   if (!request?.url) {
     throw new Error(
       '[h2:error:createCustomerClient] The request object does not contain a URL.',
